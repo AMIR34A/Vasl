@@ -1,4 +1,9 @@
 <Solution>
-  <Folder Name="/src/" />
+  <Folder Name="/src/">
+    <Project Path="src/Vasl.ApplicationService/Vasl.ApplicationService.csproj" Id="c7230fd6-9012-4a1d-baf5-a1ee606f9eb0" />
+    <Project Path="src/Vasl.Domain/Vasl.Domain.csproj" Id="714b9a5b-3fbb-4c2b-9cef-b6aad5230df5" />
+    <Project Path="src/Vasl.Infrastructure/Vasl.Infrastructure.csproj" Id="8e265960-0e6d-421c-928e-9c1c1865d8ed" />
+    <Project Path="src/Vasl.WebAPI/Vasl.WebAPI.csproj" Id="808a4d6b-e0f9-4a7e-9b39-34aae3e23b10" />
+  </Folder>
   <Folder Name="/tests/" />
 </Solution>
