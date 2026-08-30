@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Urls\Queries\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Vasl.Infrastructure\Vasl.Infrastructure.csproj" />
   </ItemGroup>
 
