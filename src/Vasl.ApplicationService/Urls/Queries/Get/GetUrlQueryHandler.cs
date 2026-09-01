@@ -47,7 +47,7 @@ public class GetUrlQueryHandler : IRequestHandler<GetUrlQuery, GetUrlQueryRespon
 
             var url = await _dbContext.Urls.FirstOrDefaultAsync(u => u.Code == request.Code, cancellationToken);
 
-            if (url is null)
+            if (url is null || url.IsExpired())
                 return new GetUrlQueryResponse(string.Empty);
 
             await _cache.StringSetAsync(url.Code, url.OriginalUrl, TimeSpan.FromMinutes(30));
