@@ -12,7 +12,7 @@ public class GetUrlQueryHandler : IRequestHandler<GetUrlQuery, GetUrlQueryRespon
     private readonly VaslDbContext _dbContext;
     private readonly IDistributedLockFactory _lockFactory;
 
-    private static string ResourceLock = "Get_Url_Lock";
+    private static string ResourceLock = "get_url_lock:";
     private static TimeSpan ExpiryTimeLock = TimeSpan.FromSeconds(2);
     private static TimeSpan WaitTimeLock = TimeSpan.FromSeconds(3);
     private static TimeSpan RetryTimeLock = TimeSpan.FromMicroseconds(500);
@@ -31,7 +31,7 @@ public class GetUrlQueryHandler : IRequestHandler<GetUrlQuery, GetUrlQueryRespon
         if (cacheValue.HasValue)
             return new GetUrlQueryResponse(cacheValue!);
 
-        using (var redLock = await _lockFactory.CreateLockAsync(ResourceLock,
+        using (var redLock = await _lockFactory.CreateLockAsync(ResourceLock + request.Code,
             ExpiryTimeLock,
             WaitTimeLock,
             RetryTimeLock,
