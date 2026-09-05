@@ -29,6 +29,8 @@ public static class DependencyInjection
             return RedLockFactory.Create(multiplexers);
         });
 
+        services.AddMemoryCache();
+
         return services;
     }
 }

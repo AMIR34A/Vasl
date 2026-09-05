@@ -14,7 +14,9 @@ public static class Read
             CancellationToken cancellationToken) =>
         {
             var result = await mediator.Send(new GetUrlQuery(code), cancellationToken);
-            return result.OriginalUrl.IsNullOrEmpty() ? Results.NotFound() : Results.Redirect(result.OriginalUrl);
+            return result.OriginalUrl.Equals(GetUrlQueryHandler.NotFoundMarker) ? 
+                Results.NotFound() : 
+                Results.Redirect(result.OriginalUrl);
         });
     }
 }
