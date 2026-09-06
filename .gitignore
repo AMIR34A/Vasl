@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /src/Vasl.WebAPI/appsettings.json
 /src/Vasl.WebAPI/appsettings.Development.json
+/src/Vasl.Infrastructure/Data/Migrations
