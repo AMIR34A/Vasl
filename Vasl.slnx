@@ -6,4 +6,5 @@
     <Project Path="src/Vasl.WebAPI/Vasl.WebAPI.csproj" Id="808a4d6b-e0f9-4a7e-9b39-34aae3e23b10" />
   </Folder>
   <Folder Name="/tests/" />
+  <Folder Name="/tests/LoadTests/" />
 </Solution>
