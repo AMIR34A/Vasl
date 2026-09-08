@@ -5,9 +5,11 @@ using Vasl.Infrastructure;
 
 namespace Vasl.WebAPI.Endpoints;
 
-public static class Write
+public class Write : IEndpoint
 {
-    public static void AddWriteEndpoints(this IEndpointRouteBuilder builder)
+    public EndpointType Type => EndpointType.Write;
+
+    public void AddEndpoint(IEndpointRouteBuilder builder)
     {
         builder.MapPost("/CreateShortUrl", async (CreateUrlCommand createUrl,
             IMediator mediator,

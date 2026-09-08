@@ -1,5 +1,4 @@
 using Vasl.WebAPI;
-using Vasl.WebAPI.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +8,6 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 
-app.AddReadEndpoints();
-app.AddWriteEndpoints();
+app.MapEndpoints(builder.Configuration);
 
 app.Run();

@@ -4,9 +4,11 @@ using Vasl.ApplicationService.Urls.Queries.Get;
 
 namespace Vasl.WebAPI.Endpoints;
 
-public static class Read
+public class Read : IEndpoint
 {
-    public static void AddReadEndpoints(this IEndpointRouteBuilder builder)
+    public EndpointType Type => EndpointType.Read;
+
+    public void AddEndpoint(IEndpointRouteBuilder builder)
     {
         builder.MapGet("/{code}", async ([FromRoute] string code,
             IMediator mediator,
