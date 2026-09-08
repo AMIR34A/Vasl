@@ -7,6 +7,8 @@ public class VaslDbContext : DbContext
 {
     public DbSet<Url> Urls { get; set; }
 
+    public VaslDbContext(DbContextOptions<VaslDbContext> options) : base(options) { }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         base.OnConfiguring(optionsBuilder);
